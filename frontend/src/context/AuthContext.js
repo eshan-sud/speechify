@@ -21,16 +21,13 @@ export const AuthProvider = ({ children }) => {
           logout();
         } else {
           setIsLoggedIn(true);
-          setToken(storedToken);
         }
       } catch (error) {
         console.error("Error decoding token:", error);
         logout();
       }
-    } else {
-      setIsLoggedIn(false);
     }
-  }, [token]);
+  }, []);
 
   const login = (newToken) => {
     localStorage.setItem("authToken", newToken);
