@@ -1,4 +1,4 @@
-// backend/server/audio.js
+// backend/audio.js
 
 const express = require("express");
 const multer = require("multer");

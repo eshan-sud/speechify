@@ -6,15 +6,19 @@ import { toast } from "react-hot-toast";
 import { useAuth } from "../context/AuthContext";
 
 const LoginSignup = () => {
-  const { isLoggedIn, login } = useAuth();
+  const { login } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleAuth = async () => {
-    const endpoint = isLogin ? "/api/login" : "/api/signup";
+    const endpoint = isLogin ? "/login" : "/signup";
     try {
-      const response = await axios.post(endpoint, { email, password });
+      console.log(process.env.REACT_APP_FRONTEND_API_BASE_URL);
+      const response = await axios.post(
+        `${process.env.REACT_APP_FRONTEND_API_BASE_URL}${endpoint}`,
+        { email, password }
+      );
       toast.success(response.data.message);
       login();
     } catch (error) {

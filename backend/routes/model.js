@@ -1,4 +1,4 @@
-// backend/server/model.js
+// backend/model.js
 
 const express = require("express");
 const router = express.Router();
