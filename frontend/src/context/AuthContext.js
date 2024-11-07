@@ -1,16 +1,48 @@
 // frontend/src/context/AuthContext.js
 
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
+import { jwtDecode } from "jwt-decode";
 
 // Create context
 const AuthContext = createContext();
 
-// Create a provider to manage auth state
+// Create provider to manage auth state
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [token, setToken] = useState(localStorage.getItem("authToken"));
 
-  const login = () => setIsLoggedIn(true);
-  const logout = () => setIsLoggedIn(false);
+  useEffect(() => {
+    const storedToken = localStorage.getItem("authToken");
+    if (storedToken) {
+      try {
+        const decodedToken = jwtDecode(storedToken);
+        const currentTime = Date.now() / 1000;
+        if (decodedToken.exp < currentTime) {
+          logout();
+        } else {
+          setIsLoggedIn(true);
+          setToken(storedToken);
+        }
+      } catch (error) {
+        console.error("Error decoding token:", error);
+        logout();
+      }
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, [token]);
+
+  const login = (newToken) => {
+    localStorage.setItem("authToken", newToken);
+    setToken(newToken);
+    setIsLoggedIn(true);
+  };
+
+  const logout = () => {
+    localStorage.removeItem("authToken");
+    setToken(null);
+    setIsLoggedIn(false);
+  };
 
   return (
     <AuthContext.Provider value={{ isLoggedIn, login, logout }}>

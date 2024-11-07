@@ -16,26 +16,40 @@ import LoginSignup from "./pages/LoginSignup";
 import FileUpload from "./pages/FileUpload";
 import TestModel from "./pages/TestModel";
 
-const App = () => {
+// A wrapper component to conditionally render routes based on authentication
+const ProtectedRoutes = () => {
   const { isLoggedIn } = useAuth();
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={
+          isLoggedIn ? <Navigate to="/upload" /> : <Navigate to="/home" />
+        }
+      />
+      <Route path="/home" element={<LoginSignup />} />
+      <Route
+        path="/upload"
+        element={isLoggedIn ? <FileUpload /> : <Navigate to="/home" />}
+      />
+      <Route
+        path="/test"
+        element={isLoggedIn ? <TestModel /> : <Navigate to="/home" />}
+      />
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
+  );
+};
 
+const App = () => {
   return (
     <AuthProvider>
       <div className="bg-gray-800 min-h-screen text-white">
         <Router>
           <Header />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                isLoggedIn ? <Navigate to="/upload" /> : <Navigate to="/home" />
-              }
-            />
-            <Route path="/home" element={<LoginSignup />} />
-            <Route path="/upload" element={<FileUpload />} />
-            <Route path="/test" element={<TestModel />} />
-            <Route path="*" element={<Navigate to="/home" />} />
-          </Routes>
+          <div className="container mx-auto p-8">
+            <ProtectedRoutes />
+          </div>
           <Toaster position="bottom-right" reverseOrder={false} />
         </Router>
       </div>
