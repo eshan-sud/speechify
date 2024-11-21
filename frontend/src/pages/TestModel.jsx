@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const TestModel = () => {
   const { isLoggedIn } = useAuth();
@@ -15,7 +16,7 @@ const TestModel = () => {
       setAudioUrl(response.data.audioUrl);
     } catch (error) {
       console.error(error);
-      alert("Error testing the model");
+      toast.error("Error testing the model");
     }
   };
 

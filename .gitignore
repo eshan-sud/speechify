@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Audio Files
+/audio/input/*.wav
 
 # Python Virtual Environment
 /backend/venv/*
@@ -17,6 +19,7 @@
 /frontend/build
 
 # misc
+Plan.txt
 /frontend/.DS_Store
 /frontend/.env.local
 /frontend/.env.development.local

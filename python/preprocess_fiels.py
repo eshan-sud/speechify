@@ -1,12 +1,12 @@
 
-# Preprocesses the uplaoded audio files before passing to model for training
+# Preprocesses the uploaded audio files before passing to model for training
 
 import os
 import librosa
 import soundfile as sf
 
-input_path = "C:\\Users\\Eshan Sud\\Desktop\\Speech Synthesis\\python\\wavs"
-output_path = "C:\\Users\\Eshan Sud\\Desktop\\Speech Synthesis\\python\\output"
+input_path = "../audio/wavs"
+output_path = "../audio/output"
 
 if not os.path.exists(output_path):
     os.makedirs(output_path)

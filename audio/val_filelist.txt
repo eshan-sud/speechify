@@ -1,0 +1,25 @@
+../wavs/26.wav|I can't decide whether I should wear a jacket or a sweater today.
+../wavs/27.wav|The train arrived on time and everyone boarded quickly.
+../wavs/28.wav|A rainbow appeared after the rain stopped.
+../wavs/29.wav|The sound of waves crashing against the shore is so calming.
+../wavs/30.wav|I heard a strange noise coming from the attic last night.
+../wavs/31.wav|This restaurant has a cozy atmosphere and delicious food.
+../wavs/32.wav|He gave me a thoughtful gift for my birthday.
+../wavs/33.wav|The stars twinkled brightly in the clear night sky.
+../wavs/34.wav|I love spending time with my family on the weekends.
+../wavs/35.wav|The children played happily in the playground.
+../wavs/36.wav|We watched a fascinating documentary about the ocean.
+../wavs/37.wav|She wore a beautiful dress to the wedding.
+../wavs/38.wav|The car broke down on the side of the highway.
+../wavs/39.wav|My dog loves to go for walks in the park every morning.
+../wavs/40.wav|The bakery sells fresh bread every day.
+../wavs/41.wav|I enjoy going to the gym to stay fit and healthy.
+../wavs/42.wav|We decorated the house with lights for the holiday season.
+../wavs/43.wav|The library has a great selection of books on every subject.
+../wavs/44.wav|I found a hidden trail while hiking in the mountains.
+../wavs/45.wav|The sun set behind the hills, painting the sky with colors.
+../wavs/46.wav|I can't believe how much snow fell overnight.
+../wavs/47.wav|The little boy waved goodbye as the bus drove away.
+../wavs/48.wav|She painted a beautiful portrait of her grandmother.
+../wavs/49.wav|The concert was amazing and the crowd cheered loudly.
+../wavs/50.wav|I need to finish my homework before I can watch my favorite show.

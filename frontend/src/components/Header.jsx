@@ -1,18 +1,12 @@
 // frontend/src/components/Header.jsx
 
-import React, { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const Header = () => {
   const { isLoggedIn, logout } = useAuth();
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/upload");
-    }
-  }, [isLoggedIn, navigate]);
   return (
     <header className="bg-gray-900 text-white py-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
@@ -22,7 +16,7 @@ const Header = () => {
         <nav className="space-x-6">
           {!isLoggedIn && (
             <>
-              <Link to="/" className="hover:text-indigo-400">
+              <Link to="/home" className="hover:text-indigo-400">
                 Home
               </Link>
             </>
@@ -35,12 +29,15 @@ const Header = () => {
               <Link to="/test" className="hover:text-indigo-400">
                 Test Model
               </Link>
-              <button onClick={logout} className="text-red-500">
+              <button
+                onClick={logout}
+                className="text-red-500 hover:text-red-400"
+              >
                 Logout
               </button>
             </>
           ) : (
-            <span>Login to upload and test</span>
+            <span className="text-gray-400">Login to upload and test</span>
           )}
         </nav>
       </div>

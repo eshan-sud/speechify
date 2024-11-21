@@ -16,27 +16,62 @@ import LoginSignup from "./pages/LoginSignup";
 import FileUpload from "./pages/FileUpload";
 import TestModel from "./pages/TestModel";
 
-// A wrapper component to conditionally render routes based on authentication
-const ProtectedRoutes = () => {
+// Protected Route wrapper component
+const ProtectedRoute = ({ children }) => {
   const { isLoggedIn } = useAuth();
+
+  if (!isLoggedIn) {
+    return <Navigate to="/home" />;
+  }
+
+  return children;
+};
+
+// Public Route wrapper component
+const PublicRoute = ({ children }) => {
+  const { isLoggedIn } = useAuth();
+
+  if (isLoggedIn) {
+    return <Navigate to="/upload" />;
+  }
+
+  return children;
+};
+
+const AppRoutes = () => {
   return (
     <Routes>
+      {/* Public Routes */}
       <Route
-        path="/"
+        path="/home"
         element={
-          isLoggedIn ? <Navigate to="/upload" /> : <Navigate to="/home" />
+          <PublicRoute>
+            <LoginSignup />
+          </PublicRoute>
         }
       />
-      <Route path="/home" element={<LoginSignup />} />
+
+      {/* Protected Routes */}
       <Route
         path="/upload"
-        element={isLoggedIn ? <FileUpload /> : <Navigate to="/home" />}
+        element={
+          <ProtectedRoute>
+            <FileUpload />
+          </ProtectedRoute>
+        }
       />
       <Route
         path="/test"
-        element={isLoggedIn ? <TestModel /> : <Navigate to="/home" />}
+        element={
+          <ProtectedRoute>
+            <TestModel />
+          </ProtectedRoute>
+        }
       />
-      <Route path="*" element={<Navigate to="/" />} />
+
+      {/* Default Routes */}
+      <Route path="/" element={<Navigate to="/home" />} />
+      <Route path="*" element={<Navigate to="/home" />} />
     </Routes>
   );
 };
@@ -48,7 +83,7 @@ const App = () => {
         <Router>
           <Header />
           <div className="container mx-auto p-8">
-            <ProtectedRoutes />
+            <AppRoutes />
           </div>
           <Toaster position="bottom-right" reverseOrder={false} />
         </Router>

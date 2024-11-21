@@ -29,6 +29,6 @@ def convert_and_rename_files(folder_path):
             print(f"Failed to convert {m4a_file}: {e}")
 
 if __name__ == "__main__":
-    folder_path = r"C:\\Users\\Eshan Sud\\Desktop\\Speech Synthesis\\python\\audio"
+    folder_path = "../audio"
     convert_and_rename_files(folder_path)
     print("m4a files converted to wav and renamed successfully!")

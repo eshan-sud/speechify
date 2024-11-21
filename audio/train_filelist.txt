@@ -1,0 +1,25 @@
+../wavs/1.wav|The quick brown fox jumps over the lazy dog.
+../wavs/2.wav|She sells seashells by the seashore.
+../wavs/3.wav|I can't wait to go to the beach this weekend.
+../wavs/4.wav|The weather today is perfect for a walk in the park.
+../wavs/5.wav|Can you believe how fast this year has gone by?
+../wavs/6.wav|It's always sunny in the city during the summer months.
+../wavs/7.wav|I think I'll have a cup of coffee this morning.
+../wavs/8.wav|This book is a thrilling mystery that keeps me on the edge of my seat.
+../wavs/9.wav|I'm learning how to cook new recipes for dinner.
+../wavs/10.wav|The moon was shining brightly last night.
+../wavs/11.wav|A gentle breeze swept through the trees in the forest.
+../wavs/12.wav|He enjoys playing chess with his friends every Friday.
+../wavs/13.wav|My favorite hobby is painting landscapes.
+../wavs/14.wav|The cat chased the mouse through the house.
+../wavs/15.wav|We are planning a road trip across the country next month.
+../wavs/16.wav|This song has been stuck in my head all day.
+../wavs/17.wav|The garden is full of beautiful flowers this spring.
+../wavs/18.wav|Do you prefer coffee or tea in the morning?
+../wavs/19.wav|The city skyline looks amazing at night.
+../wavs/20.wav|I need to go grocery shopping later today.
+../wavs/21.wav|She loves to read books about history and culture.
+../wavs/22.wav|I visited a museum full of ancient artifacts last weekend.
+../wavs/23.wav|The coffee shop down the street has the best pastries.
+../wavs/24.wav|They went hiking up the mountain to watch the sunrise.
+../wavs/25.wav|My friends are coming over for a game night this evening.

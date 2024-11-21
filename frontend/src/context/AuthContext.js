@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
         logout();
       }
     }
-  }, []);
+  }, [token]);
 
   const login = (newToken) => {
     localStorage.setItem("authToken", newToken);
